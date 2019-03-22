@@ -76,6 +76,36 @@ const element = scaffold.build({
   
 });
 
+// add many events...
+
+const element = scaffold.build({
+  
+  'div': {
+    
+    
+    'text': 'This is a node!',
+    'id': 'cool-id',
+    'class': 'cool-class-name',
+    'something-else': 'this is also an attribute'
+    'event': [
+    
+      ['click', e => {
+
+        alert('Woah! Awesome!');
+
+      }, true],
+      ['mouseover', e => {
+      
+        e.target.color = 'red';
+        
+      }, false]
+    
+    ]
+    
+  }
+  
+});
+
 // add child nodes
 
 const element = scaffold.build({
