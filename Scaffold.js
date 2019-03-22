@@ -50,8 +50,6 @@ class Scaffold {
 
 						attribute.forEach(event => {
 
-							console.log(event);
-
 							element.addEventListener(...event);
 
 						});
