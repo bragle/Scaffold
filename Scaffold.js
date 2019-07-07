@@ -6,7 +6,7 @@ class Scaffold {
 
 		Object.keys(attributes).forEach(key => {
 
-			const attribute = attributes[key];
+			let attribute = attributes[key];
 
 			switch(key){
 
