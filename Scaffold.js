@@ -18,17 +18,25 @@ class Scaffold {
 
 				case 'node':
 
-					if(!(attribute instanceof Object)){
+					if (!(attribute instanceof Array) && attribute instanceof Object){
 
-						throw new Error('Node key should only be used on an object');
+						attribute = [attribute];
 
 					}
 
-					this._buildNodes(attribute).forEach(child => {
+					if (attribute instanceof Array) {
 
-						element.appendChild(child);
+						this._buildNodes(attribute).forEach(child => {
 
-					});
+							element.appendChild(child);
+
+						});
+
+					} else {
+
+						throw new Error('Node should be either an array or an object');
+
+					}
 
 				break;
 
@@ -122,11 +130,25 @@ class Scaffold {
 
 	}
 
-	build(json){
+	build(object, returnArray){
 
-		const elements = this._buildNodes(json);
+		if (!(object instanceof Array) && object instanceof Object) {
 
-		return elements.length == 1 ? elements[0] : elements;
+			object = [object];
+
+		}
+
+		if (object instanceof Array) {
+
+			const elements = paraply.scaffold._buildNodes(object);
+
+			return elements.length == 1 && !returnArray ? elements[0] : elements;
+
+		} else {
+
+			throw new Error('Build object should be either an array or an object');
+
+		}
 
 	}
 
