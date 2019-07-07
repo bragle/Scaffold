@@ -11,13 +11,10 @@ const scaffold = new Scaffold();
 // create a simple node
 
 const element = scaffold.build({
-  
-  'div': {
-    
-    'text': 'This is a node!'
-    
-  }
-  
+
+  tag: 'div',
+  text: 'This is a node!'
+
 });
 
 // you can also do it like this (you might want that if you want to create multiple nodes with the same tag)
@@ -43,85 +40,71 @@ const element = scaffold.build([
 // add any attribute you'd like
 
 const element = scaffold.build({
-  
-  'div': {
-    
-    'text': 'This is a node!',
-    'id': 'cool-id',
-    'class': 'cool-class-name',
-    'something-else': 'this is also an attribute'
-    
-  }
-  
+
+  tag: 'div',
+  text: 'This is a node!',
+  id: 'cool-id',
+  class: 'cool-class-name',
+  'something-else': 'this is also an attribute'
+
 });
 
 // add events
 
 const element = scaffold.build({
-  
-  'div': {
-    
-    
-    'text': 'This is a node!',
-    'id': 'cool-id',
-    'class': 'cool-class-name',
-    'something-else': 'this is also an attribute'
-    'event': ['click', e => {
-      
-      alert('Woah! Awesome!');
-      
-    }, true]
-    
-  }
-  
+
+  tag: 'div',
+  text: 'This is a node!',
+  id: 'cool-id',
+  class: 'cool-class-name',
+  'something-else': 'this is also an attribute'
+  event: ['click', e => {
+
+    alert('Woah! Awesome!');
+
+  }, true]
+
 });
 
 // add many events...
 
 const element = scaffold.build({
-  
-  'div': {
-    
-    
-    'text': 'This is a node!',
-    'id': 'cool-id',
-    'class': 'cool-class-name',
-    'something-else': 'this is also an attribute'
-    'event': [
-    
-      ['click', e => {
 
-        alert('Woah! Awesome!');
+  tag: 'div',
+  text: 'This is a node!',
+  id: 'cool-id',
+  class: 'cool-class-name',
+  'something-else': 'this is also an attribute'
+  event: [
 
-      }, true],
-      ['mouseover', e => {
-      
-        e.target.color = 'red';
-        
-      }, false]
-    
-    ]
-    
-  }
-  
+    ['click', e => {
+
+      alert('Woah! Awesome!');
+
+    }, true],
+    ['mouseover', e => {
+
+      e.target.color = 'red';
+
+    }, false]
+
+  ]
+
 });
 
 // add child nodes
 
 const element = scaffold.build({
-  
-  'div': {
 
-    'class': 'box',
-    'node': [
-      
-      {'tag': 'p', 'class': 'header', 'text': 'Box'},
-      {'tag': 'p', 'class': 'description', 'text': 'Oh yeah, box-time'}
-      
-    ]
-    
-  }
-  
+  tag: 'div',
+  class: 'box',
+  node: [
+
+    {'tag': 'p', 'class': 'header', 'text': 'Box'},
+    {'tag': 'p', 'class': 'description', 'text': 'Oh yeah, box-time'}
+
+  ]
+
 });
 
 ```
