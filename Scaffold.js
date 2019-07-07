@@ -108,21 +108,13 @@ class Scaffold {
 
 		Object.keys(nodes).forEach(key => {
 
-			if(isNaN(key)){
+			if(!nodes[key].hasOwnProperty('tag')){
 
-				elements.push(this._buildNode(key, nodes[key]));
-
-			}else{
-
-				if(!nodes[key].hasOwnProperty('tag')){
-
-					throw new Error('Nodes in an array must contain a tag attribute');
-
-				}
-
-				elements.push(this._buildNode(nodes[key].tag, nodes[key]));
+				throw new Error('Nodes in an array must contain a tag attribute');
 
 			}
+
+			elements.push(this._buildNode(nodes[key].tag, nodes[key]));
 
 		});
 
