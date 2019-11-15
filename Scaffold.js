@@ -132,7 +132,7 @@ class Scaffold {
 
 		if (object instanceof Array) {
 
-			const elements = paraply.scaffold._buildNodes(object);
+			const elements = this._buildNodes(object);
 
 			return elements.length == 1 && !returnArray ? elements[0] : elements;
 
@@ -158,7 +158,7 @@ class Scaffold {
 
 		}
 
-		return self.build(parsedJson);
+		return this.build(parsedJson);
 
 	}
 
