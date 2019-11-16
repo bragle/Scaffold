@@ -3,23 +3,25 @@ Build HTML with JSON
 
 How to use:
 
+**Create an instance of Scaffold**
 ```javascript
-// create an instance of Scaffold
-
 const scaffold = new Scaffold();
+```
 
-// create a simple node
-
+**Create a simple node**
+```javascript
 const element = scaffold.build({
 
   tag: 'div',
   text: 'This is a node!'
 
 });
+```
 
-// you can also do it like this (you might want that if you want to create multiple nodes with the same tag)
+**You can also do it like this**
 
-
+You might want that if you want to create multiple nodes with the same tag
+```javascript
 const element = scaffold.build([
   
   {
@@ -36,9 +38,10 @@ const element = scaffold.build([
   }
   
 ]);
+```
 
-// add any attribute you'd like
-
+**Add any attribute you'd like**
+```javascript
 const element = scaffold.build({
 
   tag: 'div',
@@ -48,9 +51,10 @@ const element = scaffold.build({
   'something-else': 'this is also an attribute'
 
 });
+```
 
-// add events
-
+**Add events**
+```javascript
 const element = scaffold.build({
 
   tag: 'div',
@@ -65,9 +69,10 @@ const element = scaffold.build({
   }, true]
 
 });
+```
 
-// add many events...
-
+**Add many events...**
+```javascript
 const element = scaffold.build({
 
   tag: 'div',
@@ -91,9 +96,10 @@ const element = scaffold.build({
   ]
 
 });
+```
 
-// add child nodes
-
+**Add child nodes**
+```javascript
 const element = scaffold.build({
 
   tag: 'div',
@@ -106,5 +112,4 @@ const element = scaffold.build({
   ]
 
 });
-
 ```
